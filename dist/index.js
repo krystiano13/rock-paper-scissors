@@ -41,7 +41,7 @@ const renderGame = () => {
     const h21 = document.createElement("h2");
     const h22 = document.createElement("h2");
     h21.innerText = "Q - ✌ | W - ✋ | E - ✊";
-    h22.innerText = "I - ✌ | O - ✋ | P - ✊";
+    h22.innerText = mode === 'Player' ? "I - ✌ | O - ✋ | P - ✊" : '';
     list.classList.add("list");
     p1.classList.add("p1");
     p2.classList.add("p2");
@@ -64,7 +64,7 @@ const renderGame = () => {
     p1.appendChild(h21);
     p1.appendChild(btn1);
     p1.appendChild(score1);
-    h12.innerText = "Player 2";
+    h12.innerText = mode === 'Player' ? "Player 2" : 'AI';
     p2.appendChild(h12);
     p2.appendChild(h22);
     p2.appendChild(btn2);
@@ -124,6 +124,8 @@ const gameMainProcess = () => {
                 break;
         }
         if (mode === "ai") {
+            if (playerState[0].ready === false)
+                return;
             let id = Math.floor(Math.random() * 3);
             switch (id) {
                 case 0:
