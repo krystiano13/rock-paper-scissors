@@ -1,0 +1,93 @@
+.gameWrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.gameWrapper .list {
+  margin-top: 10vh;
+  width: 100vw;
+  height: 65vh;
+  display: flex;
+  overflow-y: hidden;
+}
+.gameWrapper .list .p1_list,
+.gameWrapper .list .p2_list {
+  width: 50vw;
+  height: 50vh;
+  justify-items: center;
+  align-items: center;
+}
+.gameWrapper .list .p1_list h1,
+.gameWrapper .list .p2_list h1 {
+  text-align: center;
+  font-size: 10vw;
+  -webkit-animation: app 0.5s;
+          animation: app 0.5s;
+}
+.gameWrapper .list .p1_list h1 {
+  transform: rotate(90deg);
+}
+.gameWrapper .list .p2_list h1 {
+  transform: rotate(-90deg);
+}
+.gameWrapper .ui {
+  width: 100vw;
+  height: 30vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+.gameWrapper .ui .p1,
+.gameWrapper .ui .p2 {
+  width: 50vw;
+}
+.gameWrapper .ui .p1 h1,
+.gameWrapper .ui .p2 h1 {
+  text-align: center;
+  margin-top: 10vh;
+  font-size: 3vw;
+}
+.gameWrapper .ui .p1 h2,
+.gameWrapper .ui .p2 h2 {
+  text-align: center;
+  font-size: 1.25vw;
+}
+.gameWrapper .ui .p1 .ready,
+.gameWrapper .ui .p2 .ready {
+  width: 5vw;
+  height: 5vw;
+  display: block;
+  margin-left: 22.5vw;
+  transform: translateY(2.5vh);
+  border-radius: 50%;
+  border: solid whitesmoke 0.5vh;
+  color: transparent;
+  background-color: #d12008;
+  transition: background-color 250ms;
+}
+.gameWrapper .ui .p1 .score,
+.gameWrapper .ui .p2 .score {
+  text-align: center;
+  height: 5vh;
+  font-size: 4vw;
+}
+
+@-webkit-keyframes app {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes app {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=game.css.map */
